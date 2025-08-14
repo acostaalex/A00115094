@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad Vial en la República Dominicana</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos generales del cuerpo de la página */
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Estilos del encabezado */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            font-size: 3.2rem;
+            font-weight: 700;
+        }
+
+        /* Estilos de la navegación */
+        nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1.8rem;
+        }
+
+        nav ul li a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #e74c3c;
+            border-bottom: 2px solid #e74c3c;
+        }
+
+        /* Estilos del contenedor principal */
+        main {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        /* Estilos de las secciones */
+        section {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-family: 'Poppins', sans-serif;
+            color: #e74c3c;
+            font-size: 2.2rem;
+            border-left: 5px solid #e74c3c;
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos para listas */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            color: #e74c3c;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .statistics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .statistics-list .stat-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .statistics-list .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .statistics-list .stat-card strong {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .statistics-list .stat-card .highlight {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2ecc71;
+            display: block;
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            background-color: #2c3e50;
+            color: #bbb;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Estilos para elementos destacados (como números importantes) */
+        .highlight-text {
+            font-weight: 700;
+            color: #2ecc71;
+        }
+
+        /* Estilos para enlaces importantes */
+        .important-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .important-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        /* Estilos para una sección de "Llamada a la Acción" (opcional) */
+        .cta-section {
+            background-color: #f7f9fb;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid #eef2f5;
+        }
+
+        .cta-section h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #3498db;
+            font-size: 1.8rem;
+        }
+
+        /* Estilos para una tabla de estadísticas */
+        .statistics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .statistics-table th, .statistics-table td {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .statistics-table th {
+            background-color: #f0f0f0;
+            font-weight: 600;
+            color: #555;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .statistics-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* --- Estilos para la sección de comentarios --- */
+        .comment-form {
+            background-color: #fcfcfc;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 1px solid #eee;
+        }
+
+        .comment-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .comment-form input[type="text"],
+        .comment-form input[type="email"],
+        .comment-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        .comment-form input[type="text"]:focus,
+        .comment-form input[type="email"]:focus,
+        .comment-form textarea:focus {
+            border-color: #e74c3c;
+            outline: none;
+        }
+
+        .comment-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+
+        .comments-list {
+            margin-top: 40px;
+            padding-top: 20px;
+        }
+
+        .comment-item {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .comment-item strong {
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .comment-item .comment-date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Seguridad Vial en la República Dominicana</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#estadisticas">Estadísticas</a></li>
+            <li><a href="#causas">Causas Comunes</a></li>
+            <li><a href="#prevencion">Prevención</a></li>
+            <li><a href="#recursos">Recursos</a></li>
+            <li><a href="#comentarios">Comentarios</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <section id="introduccion">
+            <h2>Contexto General</h2>
+            <p>La República Dominicana enfrenta desafíos significativos en materia de seguridad vial, con una tasa de accidentes que exige atención urgente. Estos incidentes no solo impactan la vida de las personas y sus familias, sino que también tienen consecuencias económicas y sociales importantes para el país. Comprender la magnitud del problema, identificar sus causas principales y promover estrategias de prevención efectivas son pasos cruciales hacia un futuro más seguro en nuestras vías.</p>
+            <p>Esta página tiene como objetivo proporcionar información relevante y actualizada sobre la situación de los accidentes en la República Dominicana, así como destacar la importancia de la prevención y los recursos disponibles para las víctimas y sus familias.</p>
+        </section>
+
+        <section id="estadisticas">
+            <h2>Estadísticas Clave</h2>
+            <p>Las estadísticas ofrecen una visión clara de la magnitud del problema. A continuación, se presentan algunos datos relevantes:</p>
+            
+            <div class="statistics-list">
+                <div class="stat-card">
+                    <strong>Tasa de mortalidad por accidentes de tránsito</strong>
+                    <span class="highlight">32.3</span>
+                    <small>por cada 100,000 habitantes (2022)</small>
+                </div>
+                <div class="stat-card">
+                    <strong>Número total de accidentes registrados</strong>
+                    <span class="highlight">15,745</span>
+                    <small>durante el año 2023</small>
+                </div>
+                <div class="stat-card">
+                    <strong>Motocicletas involucradas</strong>
+                    <span class="highlight">68%</span>
+                    <small>del total de accidentes</small>
+                </div>
+                <div class="stat-card">
+                    <strong>Provincias con mayor índice</strong>
+                    <span class="highlight">SD, Santiago, La Vega</span>
+                    <small>principales focos de accidentalidad</small>
+                </div>
+            </div>
+
+            <h3>Comparativa Anual de Accidentes</h3>
+            <table class="statistics-table">
+                <thead>
+                    <tr>
+                        <th>Año</th>
+                        <th>Total de Accidentes</th>
+                        <th>Fallecidos</th>
+                        <th>Heridos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2022</td>
+                        <td>14,980</td>
+                        <td>2,015</td>
+                        <td>11,540</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>15,745</td>
+                        <td>2,150</td>
+                        <td>12,020</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Es fundamental consultar las fuentes oficiales como el <a href="#" class="important-link">Observatorio de Seguridad Ciudadana (OSC)</a> o la DIGESETT para obtener datos precisos y actualizados.</p>
+        </section>
+
+        <section id="causas">
+            <h2>Causas Comunes</h2>
+            <p>La ocurrencia de accidentes en la República Dominicana es el resultado de una combinación de factores. Las causas más recurrentes incluyen:</p>
+            <ul>
+                <li><strong>Exceso de velocidad:</strong> Conducir a velocidades superiores a las permitidas reduce el tiempo de reacción y aumenta la gravedad de las colisiones.</li>
+                <li><strong>Conducción bajo los efectos del alcohol o sustancias psicoactivas:</strong> Estas sustancias alteran la percepción, el juicio y la capacidad de reacción.</li>
+                <li><strong>Distracciones al volante:</strong> El uso de teléfonos móviles, comer, o interactuar con pasajeros desvía la atención del conductor.</li>
+                <li><strong>Falta de respeto a las señales de tránsito:</strong> Ignorar semáforos, señales de pare o de ceda el paso es una causa frecuente de accidentes.</li>
+                <li><strong>Mal estado de las vías:</strong> Carreteras con baches, falta de mantenimiento o señalización deficiente aumentan el riesgo.</li>
+                <li><strong>Condiciones vehiculares deficientes:</strong> Neumáticos desgastados, fallas en los frenos o luces defectuosas pueden provocar accidentes.</li>
+                <li><strong>Conducción agresiva:</strong> Maniobras bruscas, cambios de carril inseguros y no mantener la distancia de seguridad son comportamientos peligrosos.</li>
+                <li><strong>Fatiga o sueño al volante:</strong> La falta de descanso disminuye la capacidad de concentración y aumenta el riesgo de errores.</li>
+            </ul>
+        </section>
+
+        <section id="prevencion">
+            <h2>Estrategias de Prevención</h2>
+            <p>Abordar el problema de los accidentes requiere un esfuerzo concertado de múltiples actores. Las estrategias de prevención deben ser integrales y sostenibles:</p>
+            <ul>
+                <li><strong>Educación y concienciación vial:</strong> Implementar programas educativos en escuelas y campañas de concienciación masivas dirigidas a todos los grupos de edad.</li>
+                <li><strong>Cumplimiento y fiscalización de las leyes de tránsito:</strong> Mayor presencia policial y aplicación rigurosa de las sanciones por infracciones.</li>
+                <li><strong>Mejora de la infraestructura vial:</strong> Inversión en el mantenimiento y construcción de carreteras seguras, con señalización clara, iluminación adecuada y pasos peatonales protegidos.</li>
+                <li><strong>Inspección Vehicular:</strong> Programas de revisión técnica vehicular obligatoria para garantizar que los vehículos estén en condiciones óptimas.</li>
+                <li><strong>Fomento del Transporte Público y Alternativo:</strong> Desarrollar y mejorar sistemas de transporte público eficientes y seguros para reducir el uso de vehículos privados.</li>
+            </ul>
+            <div class="cta-section">
+                <h3>¡Tu seguridad es importante!</h3>
+                <p>Recuerda siempre conducir de manera responsable, usar el cinturón de seguridad y estar atento a tu entorno.</p>
+            </div>
+        </section>
+
+        <section id="recursos">
+            <h2>Recursos y Ayuda</h2>
+            <p>En caso de emergencia o para obtener más información y apoyo, los siguientes recursos pueden ser de utilidad en la República Dominicana:</p>
+            <ul>
+                <li><strong>Número de Emergencia Nacional:</strong> <span class="important-link">911</span> (para asistencia médica, policía y bomberos).</li>
+                <li><strong>DIGESETT (Dirección General de Seguridad de Tránsito y Transporte Terrestre):</strong> Para información sobre regulaciones de tránsito, reportes de accidentes y más. Visita su <a href="https://digesett.gob.do" class="important-link" target="_blank">página web oficial</a>.</li>
+                <li><strong>Ministerio de Salud Pública:</strong> Para información sobre salud y atención médica post-accidente. Consulta su <a href="https://www.msp.gob.do" class="important-link" target="_blank">sitio web oficial</a>.</li>
+                <li><strong>Hospitales y Clínicas:</strong> Los principales centros de salud del país ofrecen atención de emergencia y seguimiento médico.</li>
+            </ul>
+            <p>Es crucial tener a mano estos números y recursos en caso de necesidad.</p>
+        </section>
+
+        <section id="comentarios">
+            <h2>Deja un Comentario</h2>
+            <p>Tu opinión es importante para nosotros. Comparte tus pensamientos, experiencias o sugerencias sobre la seguridad vial en la República Dominicana.</p>
+
+            <div class="comment-form">
+                <form action="guardar_comentario.php" method="POST">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">Correo Electrónico (opcional):</label>
+                    <input type="email" id="email" name="email">
+                    
+                    <label for="comentario">Tu Comentario:</label>
+                    <textarea id="comentario" name="comentario" required></textarea>
+
+                    <button type="submit">Enviar Comentario</button>
+                </form>
+            </div>
+
+            <div class="comments-list">
+                <h3>Comentarios Recientes</h3>
+                <?php
+                // Configuración de la base de datos
+                $servername = "localhost";
+                $username = "root";
+                $password = "tu_nueva_contrasena"; // Reemplaza con la contraseña que configuraste
+                $dbname = "seguridad_vial";
+                $port = 3307; // Puerto de MySQL
+
+                // Crear conexión
+                $conn = new mysqli($servername, $username, $password, $dbname, $port);
+                
+                // Verificar la conexión
+                if ($conn->connect_error) {
+                    die("Conexión fallida: " . $conn->connect_error);
+                }
+                
+                // Consultar los comentarios de la base de datos
+                $sql = "SELECT nombre, comentario FROM comentarios ORDER BY id DESC";
+                $result = $conn->query($sql);
+                
+                if ($result->num_rows > 0) {
+                    // Mostrar cada comentario
+                    while($row = $result->fetch_assoc()) {
+                        echo '<div class="comment-item">';
+                        echo '<strong>' . htmlspecialchars($row["nombre"]) . '</strong>';
+                        echo '<p>' . nl2br(htmlspecialchars($row["comentario"])) . '</p>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo "<p>Aún no hay comentarios. ¡Sé el primero en dejar uno!</p>";
+                }
+                
+                $conn->close();
+                ?>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Este sitio web se proporciona con fines informativos y educativos. Para obtener estadísticas oficiales y actualizadas, por favor consulte las fuentes gubernamentales correspondientes en la República Dominicana.</p>
+        <p>&copy; 2025 Información sobre Seguridad Vial. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); 
+                const targetId = this.getAttribute('href').substring(1); 
+                const targetElement = document.getElementById(targetId); 
+
+                if (targetElement) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    window.scrollTo({
+                        top: targetElement.offsetTop - navHeight - 20, /* Añade un pequeño margen extra */
+                        behavior: 'smooth' 
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
